@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<!--        maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"-->
+
+<BorderPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PrimaryController">
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="159.0" style="-fx-background-color: rgb(77, 77, 77);" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Giới thiệu chương trình" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="32.0" prefHeight="65.0" prefWidth="132.0" text="Đây là chương trình hỗ trợ quản lý và tổ chức Hội nghị." textFill="WHITE" wrapText="true" />
+            <Label layoutX="14.0" layoutY="98.0" text="Hướng dẫn:" textFill="WHITE" />
+            <Label layoutX="14.0" layoutY="116.0" prefHeight="54.0" prefWidth="132.0" text="- Chọn một Hội nghị trong danh sách để xem thông tin." textFill="WHITE" wrapText="true" />
+            <Label layoutX="14.0" layoutY="170.0" prefHeight="53.0" prefWidth="132.0" text="- Nhấn &quot;Đăng ký tham dự&quot; và đợi Quản trị viên xem xét yêu cầu." textFill="WHITE" wrapText="true" />
+            <Label layoutX="14.0" layoutY="244.0" text="Lưu ý:" textFill="WHITE" />
+            <Label layoutX="14.0" layoutY="262.0" prefHeight="73.0" prefWidth="132.0" text="- Bạn phải đăng nhập với vai trò &quot;Người dùng bình thường&quot; mới được phép tham dự." textFill="WHITE" wrapText="true" />
+         </children>
+      </AnchorPane>
+   </right>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgb(77, 77, 77);" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="roleLabel" layoutX="12.0" layoutY="66.0" text="role" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Button fx:id="conferenceStatBtn" disable="true" layoutX="14.0" layoutY="146.0" mnemonicParsing="false" onAction="#showConferenceStat" prefHeight="26.0" prefWidth="172.0" text="Thống kê Hội nghị" />
+            <Button fx:id="conferenceManageBtn" disable="true" layoutX="14.0" layoutY="183.0" mnemonicParsing="false" onAction="#showConferenceManage" prefHeight="26.0" prefWidth="172.0" text="Quản lý Hội nghị" />
+            <Button fx:id="userManageBtn" disable="true" layoutX="14.0" layoutY="220.0" mnemonicParsing="false" onAction="#showUserManage" prefHeight="26.0" prefWidth="172.0" text="Quản lý Người dùng" />
+            <Button fx:id="locationBtn" disable="true" layoutX="14.0" layoutY="257.0" mnemonicParsing="false" onAction="#showLocationManage" prefHeight="26.0" prefWidth="172.0" text="Địa điểm tổ chức" />
+            <MenuButton fx:id="accountMenuBtn" layoutX="12.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="176.0" text="Bạn chưa đăng nhập">
+              <items>
+                <MenuItem fx:id="loginMenuItem" mnemonicParsing="false" onAction="#login" text="Đăng nhập" />
+                <MenuItem fx:id="registerMenuItem" mnemonicParsing="false" onAction="#registerAccount" text="Đăng ký tài khoản" />
+                  <MenuItem fx:id="profileMenuItem" mnemonicParsing="false" onAction="#showProfile" text="Hồ sơ cá nhân" visible="false" />
+                  <MenuItem fx:id="logoutMenuItem" mnemonicParsing="false" onAction="#logout" text="Đăng xuất" visible="false" />
+              </items>
+            </MenuButton>
+         </children></AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgb(77, 77, 77);" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane layoutY="30.0" prefHeight="370.0" prefWidth="440.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab text="Danh sách">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="414.0">
+                           <children>
+                              <TableView fx:id="conferenceTableView" onMouseClicked="#onRowSelected" prefHeight="339.0" prefWidth="442.0">
+                                 <columns>
+                                    <TableColumn fx:id="idColumn" prefWidth="40.79998779296875" text="ID" />
+                                    <TableColumn fx:id="nameColumn" prefWidth="160.79998779296875" text="Tên Hội nghị" />
+                                    <TableColumn fx:id="summaryColumn" prefWidth="239.20001220703125" text="Mô tả" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Lưới">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane prefHeight="369.0" prefWidth="442.0">
+                                 <content>
+                                    <FlowPane fx:id="conferenceFlowPane" prefHeight="118.0" prefWidth="440.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <Label layoutX="78.0" layoutY="-4.0" text="Danh sách tất cả hội nghị" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

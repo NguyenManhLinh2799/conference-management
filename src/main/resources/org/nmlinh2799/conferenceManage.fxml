@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.ConferenceManageController">
+   <top>
+      <AnchorPane prefHeight="54.0" prefWidth="800.0" style="-fx-background-color: rgb(77, 77, 77);" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="305.0" layoutY="10.0" text="Quản lý Hội nghị" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="726.0" layoutY="15.0" mnemonicParsing="false" onAction="#newConference" text="Tạo mới" />
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: rgb(77, 77, 77);" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="726.0" layoutY="7.0" mnemonicParsing="false" onAction="#goBack" text="Quay lại" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <TableView fx:id="conferenceTableView" prefHeight="290.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="31.20001220703125" text="ID" />
+          <TableColumn fx:id="nameColumn" prefWidth="148.79998779296875" text="Tên Hội nghị" />
+            <TableColumn fx:id="summaryColumn" prefWidth="255.20001220703125" text="Mô tả" />
+            <TableColumn fx:id="locationColumn" prefWidth="144.0" text="Địa điểm" />
+            <TableColumn fx:id="timeColumn" prefWidth="102.39996337890625" text="Thời gian" />
+            <TableColumn fx:id="numberOfAttendeesColumn" prefWidth="123.2000732421875" text="Số người tham dự" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

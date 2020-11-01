@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.user.ConferenceStatController">
+   <center>
+      <TableView fx:id="regConfTableView" onMouseClicked="#onRowSelected" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="32.800018310546875" text="ID" />
+          <TableColumn fx:id="nameColumn" prefWidth="121.60000610351562" text="Tên Hội nghị" />
+            <TableColumn fx:id="summaryColumn" prefWidth="281.60003662109375" text="Mô tả" />
+            <TableColumn fx:id="locationColumn" prefWidth="158.39996337890625" text="Địa điểm" />
+            <TableColumn fx:id="timeColumn" prefWidth="104.00006103515625" text="Thời gian" />
+            <TableColumn fx:id="statusColumn" prefWidth="104.0" text="Tình trạng" />
+        </columns>
+      </TableView>
+   </center>
+   <top>
+      <AnchorPane prefHeight="54.0" prefWidth="800.0" style="-fx-background-color: rgb(77, 77, 77);" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="9.0" text="Hội nghị đã đăng ký" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="keywordsField" layoutX="258.0" layoutY="15.0" prefHeight="26.0" prefWidth="180.0" promptText="Nhập từ khóa" />
+            <ChoiceBox fx:id="searchByChoice" layoutX="438.0" layoutY="14.0" prefHeight="26.0" prefWidth="80.0" />
+            <ChoiceBox fx:id="timeChoice" layoutX="518.0" layoutY="14.0" prefHeight="26.0" prefWidth="120.0" />
+            <ChoiceBox fx:id="statusChoice" layoutX="638.0" layoutY="14.0" prefHeight="26.0" prefWidth="120.0" />
+            <Button layoutX="758.0" layoutY="14.0" mnemonicParsing="false" onAction="#search" text="🔍" />
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: rgb(77, 77, 77);" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="726.0" layoutY="7.0" mnemonicParsing="false" onAction="#goBack" text="Quay lại" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

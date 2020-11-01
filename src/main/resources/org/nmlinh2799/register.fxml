@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: rgb(77, 77, 77);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterController">
+    <children>
+        <Label layoutX="197.0" layoutY="14.0" text="Đăng ký tài khoản" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+      <Label layoutX="93.0" layoutY="78.0" text="Họ tên:" textFill="WHITE" />
+      <TextField fx:id="fullnameField" layoutX="207.0" layoutY="75.0" prefHeight="26.0" prefWidth="300.0" />
+      <Label layoutX="93.0" layoutY="116.0" text="Email:" textFill="WHITE" />
+      <TextField fx:id="emailField" layoutX="207.0" layoutY="111.0" prefHeight="26.0" prefWidth="300.0" />
+        <Label layoutX="93.0" layoutY="151.0" text="Tên tài khoản:" textFill="WHITE" />
+        <TextField fx:id="usernameField" layoutX="207.0" layoutY="146.0" prefHeight="26.0" prefWidth="300.0" />
+        <Label layoutX="93.0" layoutY="187.0" text="Mật khẩu:" textFill="WHITE" />
+        <PasswordField fx:id="passwordField" layoutX="207.0" layoutY="182.0" prefHeight="26.0" prefWidth="300.0" />
+      <Label layoutX="93.0" layoutY="223.0" text="Xác nhận mật khẩu:" textFill="WHITE" />
+      <PasswordField fx:id="confirmPasswordField" layoutX="207.0" layoutY="218.0" prefHeight="26.0" prefWidth="300.0" />
+      <Label layoutX="93.0" layoutY="258.0" text="Bạn là:" textFill="WHITE" />
+      <RadioButton fx:id="user" layoutX="207.0" layoutY="258.0" mnemonicParsing="false" selected="true" text="Người dùng bình thường" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="role" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="416.0" layoutY="258.0" mnemonicParsing="false" text="Quản trị viên" textFill="WHITE" toggleGroup="$role" />
+    </children>
+</AnchorPane>

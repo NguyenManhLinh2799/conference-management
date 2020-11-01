@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="800.0" style="-fx-background-color: violet;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.DetailsPaneController">
+   <children>
+      <Label layoutX="211.0" layoutY="5.0" text="ID:" />
+      <Label layoutX="211.0" layoutY="34.0" text="Tên:" />
+      <Label layoutX="294.0" layoutY="6.0" text="Thời gian:" />
+      <Label layoutX="462.0" layoutY="34.0" text="Địa điểm:" />
+      <Label layoutX="565.0" layoutY="6.0" text="Số lượng dự kiến:" />
+      <Label layoutX="210.0" layoutY="62.0" text="Mô tả:" />
+      <Label layoutX="209.0" layoutY="103.0" text="Chi tiết:" />
+      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="id" layoutX="230.0" layoutY="5.0" text="id" />
+      <DatePicker fx:id="datePicker" layoutX="350.0" layoutY="2.0" />
+      <TextField fx:id="numberOfAttendees" layoutX="659.0" layoutY="1.0" prefHeight="26.0" prefWidth="50.0" />
+      <TextField fx:id="name" layoutX="236.0" layoutY="30.0" prefHeight="26.0" prefWidth="220.0" />
+      <ChoiceBox fx:id="loc" layoutX="515.0" layoutY="30.0" prefHeight="26.0" prefWidth="240.0" />
+      <Button layoutX="755.0" layoutY="30.0" mnemonicParsing="false" onAction="#showLocationManage" prefHeight="26.0" prefWidth="30.0" text="...">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="summary" layoutX="253.0" layoutY="58.0" prefHeight="45.0" prefWidth="530.0" wrapText="true" />
+      <TextArea fx:id="detail" layoutX="253.0" layoutY="105.0" prefHeight="60.0" prefWidth="530.0" wrapText="true" />
+      <Button layoutX="66.0" layoutY="152.0" mnemonicParsing="false" onAction="#chooseImage" text="Chọn ảnh" />
+      <Button layoutX="208.0" layoutY="168.0" mnemonicParsing="false" onAction="#showRequestsList" text="Danh sách đăng ký tham dự" />
+      <Button layoutX="709.0" layoutY="168.0" mnemonicParsing="false" onAction="#save" text="Lưu thông tin" />
+   </children>
+</AnchorPane>

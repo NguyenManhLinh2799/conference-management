@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.admin.UserManageController">
+   <center>
+      <TableView fx:id="userTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="33.60003662109375" text="ID" />
+          <TableColumn fx:id="fullnameColumn" prefWidth="196.79998779296875" text="Họ tên" />
+            <TableColumn fx:id="usernameColumn" prefWidth="137.5999755859375" text="Tên tài khoản" />
+            <TableColumn fx:id="emailColumn" prefWidth="198.4000244140625" text="Email" />
+            <TableColumn fx:id="noConfAttendedColumn" prefWidth="143.20001220703125" text="Số hội nghị đã tham gia" />
+            <TableColumn fx:id="blockedColumn" prefWidth="96.800048828125" text="Bị chặn" />
+        </columns>
+      </TableView>
+   </center>
+   <top>
+      <AnchorPane prefHeight="54.0" prefWidth="800.0" style="-fx-background-color: rgb(77, 77, 77);" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="9.0" text="Quản lý Người dùng" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="keywordsField" layoutX="251.0" layoutY="15.0" promptText="Nhập từ khóa" />
+            <ChoiceBox fx:id="searchChoice" layoutX="400.0" layoutY="14.0" prefHeight="26.0" prefWidth="110.0" />
+            <ChoiceBox fx:id="statusChoice" layoutX="511.0" layoutY="14.0" prefHeight="26.0" prefWidth="120.0" />
+            <Button layoutX="631.0" layoutY="14.0" mnemonicParsing="false" onAction="#search" text="🔍" />
+            <Button layoutX="682.0" layoutY="15.0" mnemonicParsing="false" onAction="#block" text="Chặn" />
+            <Button layoutX="726.0" layoutY="15.0" mnemonicParsing="false" onAction="#unblock" text="Bỏ chặn" />
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: rgb(77, 77, 77);" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="726.0" layoutY="7.0" mnemonicParsing="false" onAction="#goBack" text="Quay lại" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

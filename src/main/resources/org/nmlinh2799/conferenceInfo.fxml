@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: rgb(77, 77, 77);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ConferenceInfoController">
+   <children>
+      <Label alignment="CENTER" layoutX="293.0" layoutY="14.0" text="Thông tin Hội nghị" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="94.0" layoutY="51.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="ID:" />
+            <Label layoutX="13.0" layoutY="40.0" text="Tên Hội nghị:" />
+            <Label layoutX="13.0" layoutY="167.0" text="Mô tả:" />
+            <Label layoutX="12.0" layoutY="218.0" text="Chi tiết:" />
+            <Label layoutX="13.0" layoutY="65.0" text="Thời gian:" />
+            <Label layoutX="14.0" layoutY="93.0" text="Địa điểm:" />
+            <Label fx:id="id" layoutX="152.0" layoutY="14.0" text="id" />
+            <Label fx:id="name" layoutX="148.0" layoutY="40.0" text="name" />
+            <Label fx:id="summary" alignment="TOP_LEFT" layoutX="146.0" layoutY="167.0" prefHeight="48.0" prefWidth="450.0" text="summary" wrapText="true" />
+            <Label fx:id="detail" alignment="TOP_LEFT" layoutX="147.0" layoutY="218.0" prefHeight="80.0" prefWidth="450.0" text="detail" wrapText="true" />
+            <Label fx:id="time" layoutX="149.0" layoutY="65.0" text="time" />
+            <Label fx:id="loc" layoutX="149.0" layoutY="93.0" text="loc" />
+            <Label layoutX="13.0" layoutY="140.0" text="Số lượng dự kiến:" />
+            <Label fx:id="numberOfAttendees" layoutX="112.0" layoutY="140.0" text="noAttendees" />
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="412.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="13.0" layoutY="120.0" text="Số lượng đăng ký:" />
+            <Label fx:id="numberOfRegistrations" layoutX="115.0" layoutY="120.0" text="noRegistration" />
+            <Line endX="286.0" layoutX="100.0" layoutY="35.0" opacity="0.3" startX="-100.0" />
+            <Line endX="286.0" layoutX="100.0" layoutY="61.0" opacity="0.3" startX="-100.0" />
+            <Line endX="286.0" layoutX="100.0" layoutY="87.0" opacity="0.3" startX="-100.0" />
+            <Line endX="286.0" layoutX="100.0" layoutY="115.0" opacity="0.3" startX="-100.0" />
+            <Line endX="500.0" layoutX="100.0" layoutY="166.0" opacity="0.3" startX="-100.0" />
+            <Line endX="500.0" layoutX="100.0" layoutY="217.0" opacity="0.3" startX="-100.0" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="608.0" layoutY="360.0" mnemonicParsing="false" onAction="#goBack" text="Quay lại" />
+      <Button fx:id="registerOrCancelBtn" layoutX="678.0" layoutY="360.0" mnemonicParsing="false" onAction="#registerConference" text="Đăng ký tham dự" />
+      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#showAttendeesList" text="Xem danh sách tham dự" />
+   </children>
+</AnchorPane>
